@@ -1,39 +1,33 @@
-
 /* Template Name   : Treelike, mobile page for links.
 * Author           : Jorge Perez
 * Version          : 1.0.3
 * Updated          : Dec 2022
 * File Description : Main .css file of the template    */
 
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Nunito:400,600,700');
 
-
 /* Basic body Info ----------------------------------------------------------------------------*/
-
 body {
     font-family: 'Nunito', sans-serif;
     overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
+    color: #ffffff; /* Ensuring headers are also white for contrast */
 }
 
-/* This is the Header. CSS of the main profile picture, size & box shadow and subsequent text */
+/* Updated profile picture style, size & box shadow */
 .rounded-circle {
-    width: 150;
+    width: 150px; /* Corrected */
     height: 150px;
-    box-shadow: 2px 5px 12px rgba(0,0,0,50%);
+    box-shadow: 2px 5px 12px rgba(0,0,0,0.5); /* Corrected transparency value */
 }
 
-.first-title {
-    font-size: 20px;
+.first-title, .header-name {
+    font-size: 20px; /* Unified font size for simplicity */
+    color: #ffffff; /* Ensuring text is white for contrast */
 }
 
 .header-name {
@@ -42,33 +36,28 @@ h6 {
 
 .copyright_content {
     font-size: 14px;
+    color: #e8f5e9; /* Lighter green for a subtle contrast */
 }
 
-::selection {
+::selection, ::-moz-selection {
     background: rgba(166, 175, 189, 0.3);
 }
 
-::-moz-selection {
-    background: rgba(166, 175, 189, 0.3);
-}
-
+/* Preloader styles */
 #preloader {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #fff;
+    background-color: #fff; /* Considering making this a lighter shade of green or keeping white */
     z-index: 9999999;
 }
 
-#status {
+#status .spinner, .spinner:after {
+    border-radius: 50%;
     width: 40px;
     height: 40px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -20px 0 0 -20px;
 }
 
 .spinner {
@@ -76,89 +65,51 @@ h6 {
     font-size: 10px;
     position: relative;
     text-indent: -9999em;
-    border-top: 5px solid rgba(0, 0, 0, 0.2);
-    border-right: 5px solid rgba(0, 0, 0, 0.2);
-    border-bottom: 5px solid rgba(0, 0, 0, 0.2);
-    border-left: 5px solid #000;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    transform: translateZ(0);
+    border-top: 5px solid rgba(255, 255, 255, 0.2);
+    border-right: 5px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 5px solid rgba(255, 255, 255, 0.2);
+    border-left: 5px solid #66bb6a; /* Light green spinner */
     -webkit-animation: load8 1.1s infinite linear;
     animation: load8 1.1s infinite linear;
 }
 
-.spinner,
-.spinner:after {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-}
-
-@-webkit-keyframes load8 {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes load8 {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
+/* Button styles */
 .btn-round {
     border-radius: 30px;
+    background-color: #4caf50; /* Light green buttons */
+    color: #ffffff; /* White text for buttons */
+    border: none;
 }
 
+.btn-round:hover {
+    background-color: #66bb6a; /* Slightly lighter green on hover */
+    color: #ffffff;
+}
+
+/* Form styles */
 .form-treelink .form-control {
     box-shadow: none !important;
     height: 50px;
     margin-bottom: 14px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #e0e0e0; /* Considering adjusting this to fit the green theme */
 }
 
 .form-treelink textarea.form-control {
     height: auto;
 }
 
-.contact_detail-title {
-    font-size: 18px;
+/* Miscellaneous */
+.contact_detail-title, .error, .error_msg, .gig_loader, #success_msg, #success_msg h3 {
+    color: #e8f5e9; /* Adjusting text color for visibility and consistency */
 }
 
-.error {
-    margin: 8px 0px;
-    display: none;
-    color: #ec5f79;
+/* Animations unchanged, ensuring they are included as per original file */
+@-webkit-keyframes load8 {
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
-.error_msg {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 18px;
-    color: #ec5f79;
-    font-weight: 700;
-}
-
-.gig_loader {
-    display: none;
-}
-
-#success_msg {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#success_msg h3 {
-    color: #64d674;
-    font-size: 22px;
+@keyframes load8 {
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
